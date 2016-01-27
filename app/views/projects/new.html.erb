@@ -1,0 +1,23 @@
+
+<fieldset>
+<%=form_for(@project, {class: "form-horizontal"}) do |f| %>
+<div class="form-group">
+  <%=f.text_field :project_name, placeholder: "Project Name", class: "form-control" %>
+  </div>
+  <div class="form-group">
+  <%=f.text_field :dsa_number, placeholder: "DSA NUMBER", class: "form-control" %>
+  </div>
+  <div class="form-group">
+  <%=f.text_area :project_scope, placeholder:"Enter scope of the project here", class: "form-control"%>
+  </div>
+  <div class="form-group">
+<%= f.collection_select(:district_id, District.all, :id, :district_name,{include_blank: 'Select District'}, {class: "special"}) %>
+</div>
+  <div class="form-group">
+  <%=f.grouped_collection_select(:school_id, District.order(:district_name), :schools,:district_name, :id, :school_name,  {include_blank: 'Select School'}, {class: "special"}) %>
+  </div>
+  <div class="form-group">
+  <%= f.submit 'Save', class: "btn btn-primary" %>
+  </div>
+  <% end %>
+  

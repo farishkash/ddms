@@ -1,0 +1,4 @@
+<%= @district.district_name %>
+<% @schools.each do |school| %>
+  <%= link_to school.school_name,(school)  %>
+  <% end %>

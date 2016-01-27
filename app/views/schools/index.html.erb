@@ -1,0 +1,8 @@
+<% @schools.each do |school| %>
+  <table class="table table-striped table-hover">
+    <tbody>
+    <td><%= school.school_name %></td>
+    <td><%= school.district.district_name %></td>
+  </tbody>
+  </table>
+  <% end %>
