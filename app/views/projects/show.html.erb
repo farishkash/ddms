@@ -1,2 +1,18 @@
-<%= @project.project_name %>
-<%= @district.district_name %>
+
+
+<ul class="list-group">
+  <li class="list-group-item">
+    <h2><%= @project.project_name %></h2><h3>DSA Number <%= @project.dsa_number %></h3>
+    
+  </li>
+  <li class="list-group-item">
+    <%= @project.dsa_number %>
+  </li>
+  <li class="list-group-item">
+    <%= @project.project_scope %>
+  </li>
+  <li class="list-group-item">
+    <%= @district.district_name %>
+  </li>
+</ul>
+

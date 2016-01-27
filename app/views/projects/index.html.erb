@@ -1,0 +1,9 @@
+<% @projects.each do |project| %>
+  <table class="table table-striped table-hover">
+    <tbody>
+    <td><%= link_to project.project_name,(project) %></td>
+    <td><%= project.school.school_name %></td>
+    <td><%= project.district.district_name %></td>
+  </tbody>
+  </table>
+  <% end %>
