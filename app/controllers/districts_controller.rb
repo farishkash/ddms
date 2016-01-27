@@ -11,6 +11,14 @@ class DistrictsController < ApplicationController
     @schools = @district.schools
   end
 
+ def create
+    @district = District.create(district_params)
+    if @district.save
+      redirect_to '/districts' 
+    else
+      render 'new'
+    end
+ end 
 
   private
   def district_params

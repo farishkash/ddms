@@ -1,0 +1,10 @@
+<%=form_for(@district, {class: "form-horizontal"}) do|f| %>
+<legend>Add a district to the system</legend>
+
+<div class="form-group">
+  <%= f.text_field :district_name, placeholder:"Input District Name", class: "form-control" %>
+  </div>
+  <div class="form-group">
+  <%=f.submit "Add District", class: "btn btn-primary" %>
+  <% end %>
+  </div>
