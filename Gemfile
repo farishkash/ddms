@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # document upload management
 gem 'paperclip', '~> 4.3', '>= 4.3.2'
+#database dump/load gem
+gem 'yaml_db'
 
 #styling gems
 gem 'bootstrap-sass', '~> 3.3.5'

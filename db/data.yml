@@ -1,0 +1,199 @@
+
+---
+districts:
+  columns:
+  - id
+  - district_name
+  - created_at
+  - updated_at
+  - projects_id
+  - schools_id
+  - school_id
+  - project_id
+  records: 
+  - - 1
+    - District1
+    - '2016-01-27 21:02:29.865502'
+    - '2016-01-27 21:02:29.865502'
+    - 
+    - 
+    - 
+    - 
+  - - 2
+    - District2
+    - '2016-01-27 21:02:38.094070'
+    - '2016-01-27 21:02:38.094070'
+    - 
+    - 
+    - 
+    - 
+  - - 3
+    - District3
+    - '2016-01-27 21:02:44.507027'
+    - '2016-01-27 21:02:44.507027'
+    - 
+    - 
+    - 
+    - 
+  - - 4
+    - District4
+    - '2016-01-27 21:02:52.860495'
+    - '2016-01-27 21:02:52.860495'
+    - 
+    - 
+    - 
+    - 
+
+---
+schools:
+  columns:
+  - id
+  - school_name
+  - school_location
+  - created_at
+  - updated_at
+  - district_id
+  records: 
+  - - 1
+    - School1
+    - 
+    - '2016-01-27 21:03:37.036479'
+    - '2016-01-27 21:03:37.036479'
+    - 1
+  - - 2
+    - School2
+    - 
+    - '2016-01-27 21:03:43.540614'
+    - '2016-01-27 21:03:43.540614'
+    - 1
+  - - 3
+    - School3
+    - 
+    - '2016-01-27 21:03:50.078198'
+    - '2016-01-27 21:03:50.078198'
+    - 2
+  - - 4
+    - School4
+    - 
+    - '2016-01-27 21:03:54.901997'
+    - '2016-01-27 21:03:54.901997'
+    - 2
+  - - 5
+    - School5
+    - 
+    - '2016-01-27 21:04:25.848880'
+    - '2016-01-27 21:04:25.848880'
+    - 3
+  - - 6
+    - School6
+    - 
+    - '2016-01-27 21:04:33.354878'
+    - '2016-01-27 21:04:33.354878'
+    - 3
+  - - 7
+    - School7
+    - 
+    - '2016-01-27 21:04:41.413865'
+    - '2016-01-27 21:04:41.413865'
+    - 4
+  - - 8
+    - School8
+    - 
+    - '2016-01-27 21:04:46.972659'
+    - '2016-01-27 21:04:46.972659'
+    - 4
+
+---
+projects:
+  columns:
+  - id
+  - project_name
+  - project_scope
+  - dsa_number
+  - created_at
+  - updated_at
+  - district_id
+  - school_id
+  - document_id
+  records: 
+  - - 1
+    - Project1
+    - Project 1 Scope
+    - '1'
+    - '2016-01-27 21:06:25.122425'
+    - '2016-01-27 21:06:25.122425'
+    - 1
+    - 1
+    - 
+  - - 2
+    - Project2
+    - Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
+      in a piece of classical Latin literature from 45 BC, making it over 2000 years
+      old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
+      looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum
+      passage, and going through the cites of the word in classical literature, discovered
+      the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33
+      of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
+      written in 45 BC. This book is a treatise on the theory of ethics, very popular
+      during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
+      amet..", comes from a line in section 1.10.32.
+    - '2000000'
+    - '2016-01-27 21:26:54.223718'
+    - '2016-01-27 21:26:54.223718'
+    - 1
+    - 2
+    - 
+  - - 3
+    - Project3
+    - Project 3 Scope Description
+    - '30000000'
+    - '2016-01-27 23:19:41.198319'
+    - '2016-01-27 23:19:41.198319'
+    - 1
+    - 1
+    - 
+
+---
+documents:
+  columns:
+  - id
+  - document_name
+  - document_description
+  - created_at
+  - updated_at
+  - project_id
+  - doc_file_name
+  - doc_content_type
+  - doc_file_size
+  - doc_updated_at
+  records: 
+  - - 1
+    - test document 1
+    - Project 1 test document
+    - '2016-01-27 22:14:48.761822'
+    - '2016-01-27 22:14:48.761822'
+    - 
+    - projec1test.pdf
+    - application/pdf
+    - 395450
+    - '2016-01-27 22:14:48.730671'
+  - - 2
+    - test document 1 try2
+    - Project 1 test document try2
+    - '2016-01-27 22:16:31.191267'
+    - '2016-01-27 22:16:31.191267'
+    - 1
+    - projec1test.pdf
+    - application/pdf
+    - 395450
+    - '2016-01-27 22:16:31.161953'
+  - - 3
+    - Project 1 document 2 test
+    - test 2 document
+    - '2016-01-27 22:46:53.397384'
+    - '2016-01-27 22:46:53.397384'
+    - 1
+    - projec1test.pdf
+    - application/pdf
+    - 395450
+    - '2016-01-27 22:46:53.370301'
