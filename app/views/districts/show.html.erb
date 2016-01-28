@@ -1,4 +1,11 @@
-<%= @district.district_name %>
+<ul class="list-group">
+  <li class="list-group-item">
+<h2><%= @district.district_name %></h2>
+</li>
 <% @schools.each do |school| %>
+<li class="list-group-item">
   <%= link_to school.school_name,(school)  %>
+ </li>
   <% end %>
+  
+</ul>

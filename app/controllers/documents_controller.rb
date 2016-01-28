@@ -16,7 +16,8 @@ class DocumentsController < ApplicationController
   def create
     @document = Document.new(document_params)
     if @document.save
-      redirect_to r'/index'
+       @project = @document.project
+      redirect_to @project
     else
       render 'new'
     end
