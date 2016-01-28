@@ -3,16 +3,19 @@
 <ul class="list-group">
   <li class="list-group-item">
     <h2><%= @project.project_name %></h2><h3>DSA Number <%= @project.dsa_number %></h3>
-    
   </li>
   <li class="list-group-item">
-    <%= @project.dsa_number %>
-  </li>
-  <li class="list-group-item">
-    <%= @project.project_scope %>
+    <p>Project Scope: <%= @project.project_scope %></p>
   </li>
   <li class="list-group-item">
     <%= @district.district_name %>
   </li>
+  <% @documents.each do |document| %>
+  <li class="list-group-item">
+  
+    <%= link_to document.document_name, document.doc.url(:original, false) %>
+
+  </li>
+  <% end %>
 </ul>
 

@@ -1,2 +1,12 @@
-<%= @school.school_name %>
-<%= @district.district_name %>
+<ul class="list-group">
+  <li class="list-group-item">
+    <h2><%= @school.school_name %></h2><h3><%= @district.district_name %></h3>
+  </li>
+  <% @projects.each do |project| %>
+  <li class="list-group-item">
+  
+    <%= link_to project.project_name, project_path(project)%>
+
+  </li>
+  <% end %>
+</ul>

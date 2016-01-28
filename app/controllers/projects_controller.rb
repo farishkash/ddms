@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @school = @project.school
     @district = @school.district
+    @documents = @project.documents
 
   end
   def create

@@ -9,11 +9,12 @@ class SchoolsController < ApplicationController
   def show
     @school = School.find(params[:id])
     @district = @school.district
+    @projects = @school.projects
   end
   def create
     @school = School.create(school_params)
     if @school.save
-      redirect_to '/schools' 
+      redirect_to '/schools'
     else
       render 'new'
     end

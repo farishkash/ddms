@@ -7,16 +7,16 @@ class DocumentsController < ApplicationController
     @document = Document.new
   end
   def show
-    @document.find(params[:id])
+    @document= Document.find(params[:id])
     @project = @document.project
-    @school = @document.school
-    @district = @document.distict
+    @school = @project.school
+    @district = @project.district
   end
 
   def create
     @document = Document.new(document_params)
     if @document.save
-      redirect_to root_path
+      redirect_to r'/index'
     else
       render 'new'
     end
@@ -24,7 +24,7 @@ class DocumentsController < ApplicationController
   
   private
   def document_params
-    params.require(:document).permit(:doc, :document_name, :document_description)
+    params.require(:document).permit(:doc, :document_name, :document_description,:project_id)
   end
   
 end
