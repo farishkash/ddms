@@ -11,22 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160125201653) do
+ActiveRecord::Schema.define(version: 20160128041107) do
 
   create_table "districts", force: :cascade do |t|
     t.string   "district_name"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.integer  "projects_id"
-    t.integer  "schools_id"
     t.integer  "school_id"
     t.integer  "project_id"
   end
 
   add_index "districts", ["project_id"], name: "index_districts_on_project_id"
-  add_index "districts", ["projects_id"], name: "index_districts_on_projects_id"
   add_index "districts", ["school_id"], name: "index_districts_on_school_id"
-  add_index "districts", ["schools_id"], name: "index_districts_on_schools_id"
 
   create_table "documents", force: :cascade do |t|
     t.string   "document_name"
