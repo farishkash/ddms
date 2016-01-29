@@ -1,12 +1,18 @@
 <ul class="list-group">
   <li class="list-group-item">
-    <h2><%= @school.school_name %></h2><h3><%= @district.district_name %></h3>
+    <h2><%= @school.school_name %></h2>
   </li>
+  <li class="list-group-item">
+  <h3><%= @district.district_name %></h3>
+  </li>
+  <li class="list-group-item">
   <% @projects.each do |project| %>
+  </li>
   <li class="list-group-item">
   
-    <%= link_to project.project_name, project_path(project)%>
+    <%= link_to project.project_name, project_path(project)%>&nbsp;&nbsp;<h6>DSA Number:&nbsp;<%= project.dsa_number %></h6>
 
   </li>
+
   <% end %>
 </ul>
