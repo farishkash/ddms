@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+	resourcify
   belongs_to :school
   belongs_to :district
   has_many :documents

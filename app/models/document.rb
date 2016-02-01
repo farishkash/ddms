@@ -1,4 +1,5 @@
 class Document < ActiveRecord::Base
+	resourcify
   belongs_to :project
 
   has_attached_file :doc

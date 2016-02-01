@@ -1,7 +1,9 @@
 class SchoolsController < ApplicationController
-  def index
-    @schools = School.all.includes(:district)
 
+  load_and_authorize_resource
+  def index
+ #@schools = current_user.district.schools
+ @schools = School.accessible_by(current_ability)
   end
   def new
     @school = School.new
