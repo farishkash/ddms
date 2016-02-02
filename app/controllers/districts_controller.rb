@@ -21,6 +21,17 @@ class DistrictsController < ApplicationController
     end
  end 
 
+ def update
+    
+    if @district.update_attributes(district_params)
+      flash[:success] = "The District has been updated."
+      redirect_to @district
+    else
+      render 'edit'
+    end
+  end 
+  
+
   private
   def district_params
     params.require(:district).permit(:district_name,

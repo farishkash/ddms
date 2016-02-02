@@ -1,15 +1,27 @@
+<div class="container">
+  <div class="row pushdown">
+<% if can? :all, School %>
+            <%=link_to "Edit Project", edit_project_path(@school), class: "btn btn-primary buttonspace" %>
+            <% end %>
+            
 
+            <%=link_to "Project List", projects_path, class: "btn btn-primary" %>
+            
 
+</div>
+<div class="row">
 <ul class="list-group">
   <li class="list-group-item">
     <h2><%= @project.project_name %></h2><h3>DSA Number <%= @project.dsa_number %></h3>
   </li>
   <li class="list-group-item">
-    <p>Project Scope: <%= @project.project_scope %></p>
+    <p><h5><%= @project.project_scope %></h5></p>
   </li>
+  <% if can? :all, District %>
   <li class="list-group-item">
     <%= @district.district_name %>
   </li>
+  <% end %>
   <% @documents.each do |document| %>
   <li class="list-group-item">
   
@@ -18,4 +30,5 @@
   </li>
   <% end %>
 </ul>
-
+</div>
+</div>

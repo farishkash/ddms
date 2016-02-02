@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  load_and_authorize_resource
   def index
     @projects = Project.all
 
@@ -21,7 +22,17 @@ class ProjectsController < ApplicationController
     else
       render 'new'
     end
-  end 
+  end
+  def update
+    
+
+    if @project.update_attributes(project_params)
+      flash[:success] = "The Project has been updated."
+      redirect_to @project
+    else
+      render 'edit'
+    end
+  end
 
   private
   def project_params

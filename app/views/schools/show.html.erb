@@ -1,3 +1,15 @@
+
+  <div class="row pushdown">
+<% if can? :all, School %>
+            <%=link_to "Edit School", edit_school_path(@school), class: "btn btn-primary pushright" %>
+            <% end %>
+            
+
+            <%=link_to "School List", schools_path, class: "btn btn-primary" %>
+            
+
+</div>
+<div class="row">
 <ul class="list-group">
   <li class="list-group-item">
     <h2><%= @school.school_name %></h2>
@@ -16,3 +28,4 @@
 
   <% end %>
 </ul>
+</div>

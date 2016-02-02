@@ -1,10 +1,10 @@
 <%=form_for(@district, {class: "form-horizontal"}) do|f| %>
 <legend>Add a district to the system</legend>
 
-<div class="form-group">
+<div class="form-group pushdown">
   <%= f.text_field :district_name, placeholder:"Input District Name", class: "form-control" %>
   </div>
-  <div class="form-group">
-  <%=f.submit "Add District", class: "btn btn-primary" %>
+  <div class="form-group pushdown">
+  <%=link_to "Cancel", districts_path, class: "btn btn-default buttonspace" %><%=f.submit "Add District", class: "btn btn-primary" %>
   <% end %>
   </div>
