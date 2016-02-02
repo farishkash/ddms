@@ -1,4 +1,5 @@
 class DistrictsController < ApplicationController
+  load_and_authorize_resource
   def index
     @districts = District.all
   end
@@ -19,6 +20,17 @@ class DistrictsController < ApplicationController
       render 'new'
     end
  end 
+
+ def update
+    
+    if @district.update_attributes(district_params)
+      flash[:success] = "The District has been updated."
+      redirect_to @district
+    else
+      render 'edit'
+    end
+  end 
+  
 
   private
   def district_params

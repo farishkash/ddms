@@ -1,3 +1,9 @@
+<div class="row pushdown">
+<% if can? :all, District %>
+            <%=link_to "Add District", new_district_path, class: "btn btn-primary" %>
+            <% end %>
+</div>
+<div class="row">
 <% @districts.each do |district| %>
   <table class="table table-striped table-hover">
     <tbody>
@@ -5,3 +11,4 @@
     </tbody>
     </table>
 <% end %>
+</div>

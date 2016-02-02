@@ -1,4 +1,14 @@
-<ul class="list-group">
+<div class="row pushdown">
+<% if can? :all, District %>
+            <%=link_to "Edit District", edit_district_path(@district), class: "btn btn-primary pushright" %>
+            
+
+            <%=link_to "District List", districts_path, class: "btn btn-primary" %>
+            <% end %>
+            
+            </div>
+            <div class="row">
+            <ul class="list-group">
   <li class="list-group-item">
 <h2><%= @district.district_name %></h2>
 </li>
@@ -9,3 +19,4 @@
   <% end %>
   
 </ul>
+</div>

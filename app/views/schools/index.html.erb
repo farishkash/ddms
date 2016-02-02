@@ -1,8 +1,17 @@
+<div class="container" %>
+<div class="row pushdown">
+<% if can? :all, School %>
+            <%=link_to "Add School", new_school_path, class: "btn btn-primary" %>
+            <% end %>
+</div>
+<div class="row">
 <% @schools.each do |school| %>
   <table class="table table-striped table-hover">
     <tbody>
-    <td><%= school.school_name %></td>
-    <td><%= school.district.district_name %></td>
+    <td><%= link_to school.school_name, school_path(school) %></td>
+    
   </tbody>
   </table>
   <% end %>
+  </div>
+</div>

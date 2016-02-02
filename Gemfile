@@ -28,6 +28,8 @@ gem 'paperclip', '~> 4.3', '>= 4.3.2'
 gem 'yaml_db'
 # Devise
 gem 'devise'
+gem 'cancancan'
+gem 'rolify'
 
 #styling gems
 gem 'bootstrap-sass', '~> 3.3.5'
