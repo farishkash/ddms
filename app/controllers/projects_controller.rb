@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
   load_and_authorize_resource
   def index
-    @projects = Project.all
+    @projects = Project.accessible_by(current_ability).order(:project_name)
+
 
   end
 
@@ -16,10 +17,14 @@ class ProjectsController < ApplicationController
 
   end
   def create
-    @project = Project.new(project_params)
+    @project = Project.create(project_params)
     if @project.save
       redirect_to '/projects' 
     else
+      flash[:danger]="Please make sure to fill out form completely."
+      #flash[:danger]=@project.errors.full_messages_for(:project_name)
+      #flash[:danger]=@project.errors.full_messages_for(:district_id)
+      #flash[:danger]=@project.errors.full_messages_for(:school_id)
       render 'new'
     end
   end
@@ -30,6 +35,7 @@ class ProjectsController < ApplicationController
       flash[:success] = "The Project has been updated."
       redirect_to @project
     else
+      flash[:danger]="Please make sure to fill out form completely."
       render 'edit'
     end
   end

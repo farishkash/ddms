@@ -8,5 +8,9 @@ class Project < ActiveRecord::Base
   accepts_nested_attributes_for :school
   accepts_nested_attributes_for :documents
 
+  validates_presence_of :project_name, :district_id, :school_id
+ 
+
+
  
 end

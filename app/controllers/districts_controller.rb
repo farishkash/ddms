@@ -9,7 +9,7 @@ class DistrictsController < ApplicationController
   end
   def show
     @district = District.find(params[:id])
-    @schools = @district.schools
+    @schools = @district.schools.order(:school_name)
   end
 
  def create

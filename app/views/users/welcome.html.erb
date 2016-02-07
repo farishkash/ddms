@@ -1,0 +1,4 @@
+<h1> Welcome to DDMS <%=current_user.email%></h1>
+<% if current_user.has_role? :user %>
+<h3>If you are new user, you will be granted access by the next business day.</h3>
+<% end %>
