@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   rescue_from CanCan::AccessDenied do |exception|
   flash[:danger] = exception.message
-  redirect_to '/schools'
+  redirect_to '/'
 end
 
   before_action :authenticate_user!

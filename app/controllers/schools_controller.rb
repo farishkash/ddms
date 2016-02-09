@@ -4,7 +4,7 @@ class SchoolsController < ApplicationController
   
   def index
  #@schools = current_user.district.schools
- @schools = School.accessible_by(current_ability)
+ @schools = School.accessible_by(current_ability).order(:school_name)
   end
   
   def new
@@ -22,6 +22,7 @@ class SchoolsController < ApplicationController
     if @school.save
       redirect_to '/schools'
     else
+      flash[:danger]="Please make sure to fill out form completely."
       render 'new'
     end
   end
@@ -32,6 +33,7 @@ class SchoolsController < ApplicationController
       flash[:success] = "The School has been updated."
       redirect_to @school
     else
+      flash[:danger]="Please make sure to fill out form completely."
       render 'edit'
     end
   end 

@@ -5,13 +5,28 @@
             <% end %>
 </div>
 <div class="row">
-<% @schools.each do |school| %>
+
   <table class="table table-striped table-hover">
     <tbody>
+    <tr>
+    <th>School</th>
+    
+    <th>District</th>
+
+    </tr>
+
+    <% @schools.each do |school| %>
+    <tr>
+    
     <td><%= link_to school.school_name, school_path(school) %></td>
     
+    <td><%= school.district.district_name %>
+</td>
+
+    <% end %>
+    </tr>
   </tbody>
   </table>
-  <% end %>
+  
   </div>
 </div>

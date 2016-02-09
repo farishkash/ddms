@@ -6,5 +6,10 @@ class Role < ActiveRecord::Base
             :inclusion => { :in => Rolify.resource_types },
             :allow_nil => true
 
+
   scopify
+
+   attr_accessor :_keep
+   AVAILABLE_ROLES = %w{admin user district}
+
 end

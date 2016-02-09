@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row pushdown">
-<% if can? :all, School %>
-            <%=link_to "Edit Project", edit_project_path(@school), class: "btn btn-primary buttonspace" %>
+<% if can? :all, Project %>
+            <%=link_to "Edit Project", edit_project_path(@project), class: "btn btn-primary buttonspace" %>
             <% end %>
             
 
@@ -19,7 +19,7 @@
   </li>
   <% if can? :all, District %>
   <li class="list-group-item">
-    <%= @district.district_name %>
+    <%= @project.district.district_name %>
   </li>
   <% end %>
   <% @documents.each do |document| %>

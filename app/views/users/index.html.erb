@@ -1,0 +1,15 @@
+<div class="row pushdown">
+<% if can? :all, User %>
+            <%=link_to "Add User", new_user_path, class: "btn btn-primary" %>
+            <% end %>
+</div>
+<div class="row">
+<% @users.each do |user| %>
+  <table class="table table-striped table-hover">
+    <tbody>
+      <td> <%= link_to user.email, (user) %></td>
+      <td> <%=  user.roles.first.name %></td>
+    </tbody>
+    </table>
+<% end %>
+</div>
