@@ -22,5 +22,8 @@ module Ddms
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    Paperclip.options[:content_type_mappings] = {
+  pdf: "application/pdf"
+}
   end
 end
