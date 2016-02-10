@@ -29,3 +29,5 @@
 Paperclip.options[:content_type_mappings] = {
   pdf: "application/pdf"
 }
+Mime::Type.unregister(:pdf)
+Mime::Type.register "application/force-download", :pdf, [], %w(pdf)
