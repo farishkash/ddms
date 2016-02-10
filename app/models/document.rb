@@ -3,7 +3,7 @@ class Document < ActiveRecord::Base
   belongs_to :project
 
   has_attached_file :doc,
-  :path => ":rails_root/public/system/:class/:attachment/:id_partition/:style/:filename",
+  :path => "home/deploy/ddms/public/system/:class/:attachment/:id_partition/:style/:filename",
   :url => "/system/:attachment/:id/:style/:filename"
 
   #validates_attachment :doc,
