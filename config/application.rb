@@ -22,18 +22,6 @@ module Ddms
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    Mime::Type.unregister(:pdf)
-   Mime::Type.register "application/force-download", :pdf, [], %w(pdf)
-
-   Paperclip.options[:command_path] = '/usr/bin'
-
-   require 'paperclip/media_type_spoof_detector'
-module Paperclip
-  class MediaTypeSpoofDetector
-    def spoofed?
-      false
-    end
-  end
-end
+    
   end
 end
