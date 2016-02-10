@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 # document upload management
-gem 'paperclip', '~> 4.3', '>= 4.3.2'
+gem 'paperclip', '4.2.1'
 #database dump/load gem
 gem 'yaml_db'
 # Devise
