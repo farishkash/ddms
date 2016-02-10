@@ -70,8 +70,6 @@ GEM
     capistrano-rails (1.1.6)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
-    capistrano-rails-console (1.0.2)
-      capistrano (>= 3.1.0, < 4.0.0)
     capybara (2.6.0)
       addressable
       mime-types (>= 1.16)
@@ -244,7 +242,6 @@ DEPENDENCIES
   capistrano-bundler (~> 1.1.2)
   capistrano-passenger
   capistrano-rails (~> 1.1.1)
-  capistrano-rails-console
   capistrano-rbenv!
   capybara (~> 2.6)
   coffee-rails (~> 4.1.0)
