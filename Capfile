@@ -11,6 +11,8 @@ set :rbenv_ruby, '2.2.4'
 
 require 'capistrano/rails'
 require 'capistrano/bundler'
+require 'capistrano/rails/console'
+require 'capistrano/passenger'
 
 
 # Includes tasks from other gems included in your Gemfile
