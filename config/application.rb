@@ -24,5 +24,7 @@ module Ddms
     config.active_record.raise_in_transactional_callbacks = true
     Mime::Type.unregister(:pdf)
    Mime::Type.register "application/force-download", :pdf, [], %w(pdf)
+
+   Paperclip.options[:command_path] = '/usr/bin'
   end
 end
