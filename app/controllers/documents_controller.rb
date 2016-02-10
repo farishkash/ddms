@@ -20,6 +20,7 @@ class DocumentsController < ApplicationController
        @project = @document.project
       redirect_to @project
     else
+      flash[:danger]= @document.errors.full_messages
       render 'new'
     end
   end
