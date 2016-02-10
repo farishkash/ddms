@@ -2,7 +2,7 @@ class Document < ActiveRecord::Base
 	resourcify
   belongs_to :project
 
-  #has_attached_file :doc,
+  has_attached_file :doc
   #:path => "home/deploy/ddms/public/system/:class/:attachment/:id_partition/:style/:filename",
   #:url => "/system/:attachment/:id/:style/:filename"
 
