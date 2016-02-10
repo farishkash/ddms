@@ -7,5 +7,6 @@ class Document < ActiveRecord::Base
   #:url => "/system/:attachment/:id/:style/:filename"
 
   validates_attachment :doc
+  do_not_validate_attachment_file_type :doc
     #:content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
 end
