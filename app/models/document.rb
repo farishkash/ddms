@@ -6,6 +6,6 @@ class Document < ActiveRecord::Base
   :path => ":rails_root/public/system/:class/:attachment/:id_partition/:style/:filename",
   :url => "/system/:attachment/:id/:style/:filename"
 
-  validates_attachment :doc,
-    :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+  validates_attachment :doc
+    validates_attachment_content_type :attachment, content_type: ['image/jpeg', 'image/png', 'image/gif', 'application/pdf']
 end
