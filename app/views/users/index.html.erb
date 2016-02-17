@@ -4,12 +4,20 @@
             <% end %>
 </div>
 <div class="row">
-<% @users.each do |user| %>
+
   <table class="table table-striped table-hover">
     <tbody>
+    <tr class="pushdown">
+    <th>User</th>
+    <th>Role</th> 	
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
       <td> <%= link_to user.email, (user) %></td>
       <td> <%=  user.roles.first.name %></td>
+      </tr>
+      <% end %>
     </tbody>
     </table>
-<% end %>
+
 </div>

@@ -1,4 +1,27 @@
-<%= @project.project_name %>
-<%= @district.district_name %>
-<%= @school.school_name %>
-<%= @document.document_name %>
+<div class="container">
+  <div class="row pushdown">
+<% if can? :all, Document %>
+            <%=link_to "Edit Document", edit_document_path(@document), class: "btn btn-primary buttonspace" %>
+            <% end %>
+            
+
+            <%=link_to "Document List", documents_path(@document), class: "btn btn-primary" %>
+            
+
+</div>
+<div class="row">
+<ul class="list-group">
+  <li class="list-group-item">
+    <h2><%= link_to @document.document_name, @document.doc.url(:original, false) %></h2>
+    
+  </li>
+  <li class="list-group-item">
+    <h3><%= @document.project.project_name %></h3>
+  </li>
+  <li class="list-group-item">
+    <h3><%= @document.project.dsa_number %></h5>
+  </li>
+ 
+</ul>
+</div>
+</div>

@@ -1,7 +1,7 @@
 class DocumentsController < ApplicationController
   load_and_authorize_resource
   def index
-  
+  @documents = Document.all
   end
 
   def new
@@ -9,9 +9,7 @@ class DocumentsController < ApplicationController
   end
   def show
     @document= Document.find(params[:id])
-    @project = @document.project
-    @school = @project.school
-    @district = @project.district
+    
   end
 
   def create
@@ -22,6 +20,18 @@ class DocumentsController < ApplicationController
     else
       flash[:danger]= @document.errors.full_messages
       render 'new'
+    end
+  end
+
+  def update
+    
+
+    if @document.update_attributes(document_params)
+      flash[:success] = "The Document has been updated."
+      redirect_to @document
+    else
+      flash[:danger]="Please make sure to fill out form completely."
+      render 'edit'
     end
   end
   
