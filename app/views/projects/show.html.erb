@@ -22,7 +22,7 @@
     <%= @project.district.district_name %>
   </li>
   <% end %>
-  <% @documents.each do |document| %>
+  <% @project.documents.each do |document| %>
   <li class="list-group-item">
   
     <%= link_to document.document_name, document.doc.url(:original, false) %>

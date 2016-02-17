@@ -66,7 +66,7 @@ group :development do
   gem 'capistrano-rails', '~> 1.1.1'
   gem 'capistrano-passenger'
   gem 'capistrano-rails-db'
-  gem 'capistrano-rails-console'
+  #gem 'capistrano-rails-console'
 
 # Add this if you're using rbenv
   gem 'capistrano-rbenv', github: "capistrano/rbenv"
