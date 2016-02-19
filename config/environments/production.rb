@@ -13,7 +13,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
   address: "localhost",
   port: 25,
-  domain: "server.isnexus.com"
+  domain: "server.isnexus.com",
+  enable_starttls_auto: false
 }
 
   # Full error reports are disabled and caching is turned on.
