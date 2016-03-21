@@ -1,10 +1,13 @@
 class SchoolsController < ApplicationController
 
   load_and_authorize_resource
+
+  autocomplete :school, :school_name, :full => true
   
   def index
  #@schools = current_user.district.schools
  @schools = School.accessible_by(current_ability).order(:school_name)
+  
   end
   
   def new

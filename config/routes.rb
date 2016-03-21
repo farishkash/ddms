@@ -19,7 +19,9 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :districts
-  resources :schools
+  resources :schools do
+    get :autocomplete_school_school_name, on: :collection
+  end
   resources :projects
   resources :documents
 
