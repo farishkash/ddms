@@ -4,8 +4,28 @@
             <%=link_to "Add School", new_school_path, class: "btn btn-primary" %>
             <% end %>
 </div>
-<div class="row">
+<div class="row ">
+<div class="form-group pushdown">
+<%= form_tag(schools_path, :method => "get", id: "search-form") do %>
+</div>
+<div class="form-group pushdown searchbox">
+<%= text_field_tag :search, params[:search], class: "form-control pushdown", placeholder: "School Search", type: "search", data: {autocomplete: autocomplete_school_school_name_schools_path}, :id_element => "#to_school_id" %> 
+<%= hidden_field_tag :to_school_id, id: 'to_school_id' %>
+<%= submit_tag "Search", class: "searchbtn" %>
+</div>
+<div class="form-group pushdown">
 
+<% end %>
+</div>
+<div class="searchinfo">
+</div>
+<script type="text/javascript" charset="utf-8">
+  $('#search').bind('railsAutocomplete.select', function(event, data){
+  $('.searchbtn').trigger('click')
+  });
+  </script>
+</div>
+<div class="row">
   <table class="table table-striped table-hover">
     <tbody>
     <tr>

@@ -1,8 +1,10 @@
 class Project < ActiveRecord::Base
-	resourcify
+  resourcify
   belongs_to :school
   belongs_to :district
   has_many :documents
+  
+  
 
   accepts_nested_attributes_for :district
   accepts_nested_attributes_for :school
@@ -10,7 +12,7 @@ class Project < ActiveRecord::Base
 
   validates_presence_of :project_name, :district_id, :school_id
  
-
+ 
 
  
 end
