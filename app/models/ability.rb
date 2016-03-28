@@ -13,7 +13,13 @@ class Ability
     if user.has_role? :district
 
     can :read, School, district_id: user.district.id
+    can [:read, :autocomplete_school_school_name],
+       School, district_id: user.district.id
+       
     can :read, Project, district_id: user.district.id
+    can [:read, :autocomplete_project_project_name],
+       Project, district_id: user.district.id
+       
     can :read, Document, district_id: user.district_id
     cannot :all, District
     cannot :all, User

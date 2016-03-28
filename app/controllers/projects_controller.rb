@@ -1,14 +1,27 @@
 class ProjectsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :except => :autocomplete_project_project_name
+  
+  autocomplete :project, :project_name
+  
+  
+
   def index
     @projects = Project.accessible_by(current_ability).order(:project_name)
-
-
+     if params[:search]
+      
+       @project = Project.find_by(project_name: params[:search])
+       redirect_to project_path(@project)
+       else
+     end
   end
+
+
 
   def new
     @project = Project.new
   end
+  
+
   def show
     @project = Project.find(params[:id])
     
@@ -37,6 +50,14 @@ class ProjectsController < ApplicationController
       render 'edit'
     end
   end
+
+  def get_autocomplete_items(parameters)
+   items = active_record_get_autocomplete_items(parameters)
+   items = Project.accessible_by(current_ability).select("project_name, id").
+            where(["LOWER(project_name) " + 
+                   "LIKE LOWER(?)", "%#{parameters[:term]}%"])
+  end
+
 
   private
   def project_params

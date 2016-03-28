@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   resources :schools do
     get :autocomplete_school_school_name, on: :collection
   end
-  resources :projects
+  resources :projects do
+    get :autocomplete_project_project_name, on: :collection
+  end
   resources :documents
 
 
