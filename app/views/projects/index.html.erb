@@ -5,13 +5,12 @@
             <% end %>
             </div>
 <div class="row ">
-<div class="form-group pushdown">
-<%= form_tag(projects_path, :method => "get", id: "search-form") do %>
-</div>
+
 <div class="form-group pushdown searchbox">
-<%= text_field_tag :search, params[:search], class: "form-control pushdown", placeholder: "Project Search", type: "search", data: {autocomplete: autocomplete_project_project_name_projects_path}, :id_element => "#to_project_id" %> 
+<%= form_tag(projects_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Project Search", type: "search", data: {autocomplete: autocomplete_project_project_name_projects_path}, :id_element => "#to_project_id" %> 
 <%= hidden_field_tag :to_project_id, id: 'to_school_id' %>
-<%= submit_tag "Search", class: "searchbtn" %>
+<%= submit_tag "Search", class: "searchbutton searchbtn" %>
 </div>
 <div class="form-group pushdown">
 

@@ -53,8 +53,8 @@ class ProjectsController < ApplicationController
 
   def get_autocomplete_items(parameters)
    items = active_record_get_autocomplete_items(parameters)
-   items = Project.accessible_by(current_ability).select("project_name, id").
-            where(["LOWER(project_name) " + 
+   items = Project.accessible_by(current_ability).select("project_name, dsa_number, id").
+            where(["LOWER(project_name || ', ' ||dsa_number) " + 
                    "LIKE LOWER(?)", "%#{parameters[:term]}%"])
   end
 
